@@ -85,6 +85,14 @@ timesButton.addEventListener('click', (event) => {
     inputElement.value = ''
 })
 
+//button division
+dividebyButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '/';
+    inputElement.value = ''
+})
+
 //button egal
 equalsButton.addEventListener('click', (event) => {
     event.preventDefault();
