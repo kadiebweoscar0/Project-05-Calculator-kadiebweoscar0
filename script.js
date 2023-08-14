@@ -103,6 +103,16 @@ dividebyButton.addEventListener('click', (event) => {
     inputElement.value = ''
 })
 
+//button plusoumoins
+plusoumoinsButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '*-1';
+    inputElement.value = ''
+})
+
+
+
 //button egal
 equalsButton.addEventListener('click', (event) => {
     event.preventDefault();
