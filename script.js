@@ -34,3 +34,9 @@ displayTouch()
 
 //suppression de l'attribut type du boutton AC
 acButton.removeAttribute("type");
+
+//button AC pour toutes effacer et annuler toutes les operation
+acButton.addEventListener('click', () => {
+    inputElement.value = '';
+    displayElement.innerHTML = '';
+  });
