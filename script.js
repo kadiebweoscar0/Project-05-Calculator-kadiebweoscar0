@@ -40,3 +40,9 @@ acButton.addEventListener('click', () => {
     inputElement.value = '';
     displayElement.innerHTML = '';
   });
+
+//button C pour effacer le dernier élment contenu dans inputElement et displayElement
+cButton.addEventListener('click', () => {
+    inputElement.value = inputElement.value.slice(0, -1);
+    displayElement.innerHTML = displayElement.innerHTML.slice(0, -1);
+  });
