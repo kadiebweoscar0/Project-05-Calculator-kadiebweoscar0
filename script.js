@@ -62,3 +62,11 @@ plusButton.addEventListener('click', (event) => {
     displayElement.innerHTML += '+';
     inputElement.value = ''
 })
+
+//button egal
+equalsButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    contentCalcul = eval(displayElement.textContent);
+    displayElement.innerHTML += ` = ${contentCalcul}`;
+})
