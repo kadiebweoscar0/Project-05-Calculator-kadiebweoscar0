@@ -28,3 +28,9 @@ function displayTouch() {
         } )
     });
 }
+
+//appel de la fontion displayInput
+displayTouch()
+
+//suppression de l'attribut type du boutton AC
+acButton.removeAttribute("type");
