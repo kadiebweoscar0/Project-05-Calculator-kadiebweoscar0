@@ -26,6 +26,8 @@ const timesButton = document.getElementById('times')
 
 const dividebyButton = document.getElementById('divideby')
 
+const plusoumoinsButton = document.getElementById('plusoumoins')
+
 const equalsButton = document.getElementById('equals');
 
 let txtContent, contentCalcul = 0;
@@ -82,6 +84,14 @@ timesButton.addEventListener('click', (event) => {
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     displayElement.innerHTML += '*';
+    inputElement.value = ''
+})
+
+//button pourcentage
+percentageButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '/100';
     inputElement.value = ''
 })
 
