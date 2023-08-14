@@ -20,6 +20,12 @@ const percentageButton = document.getElementById('percentage');
 
 const plusButton = document.getElementById('plus');
 
+const minusButton = document.getElementById('minus')
+
+const timesButton = document.getElementById('times')
+
+const dividebyButton = document.getElementById('divideby')
+
 const equalsButton = document.getElementById('equals');
 
 let txtContent, contentCalcul = 0;
@@ -63,10 +69,27 @@ plusButton.addEventListener('click', (event) => {
     inputElement.value = ''
 })
 
+//button sustraction
+minusButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '-';
+    inputElement.value = ''
+})
+
+//button multiplication
+timesButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '*';
+    inputElement.value = ''
+})
+
 //button egal
 equalsButton.addEventListener('click', (event) => {
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     contentCalcul = eval(displayElement.textContent);
     displayElement.innerHTML += ` = ${contentCalcul}`;
+    inputElement.value = contentCalcul
 })
