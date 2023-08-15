@@ -92,7 +92,10 @@ percentageButton.addEventListener('click', (event) => {
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     displayElement.innerHTML += '/100';
-    inputElement.value = ''
+    contentCalcul = eval(displayElement.textContent);
+    // inputElement.value = ''
+    displayElement.innerHTML += ` = ${contentCalcul}`;
+    inputElement.value = contentCalcul
 })
 
 //button division
@@ -108,7 +111,9 @@ plusoumoinsButton.addEventListener('click', (event) => {
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     displayElement.innerHTML += '*-1';
-    inputElement.value = ''
+    contentCalcul = eval(displayElement.textContent);
+    displayElement.innerHTML += ` = ${contentCalcul}`;
+    inputElement.value = contentCalcul
 })
 
 
