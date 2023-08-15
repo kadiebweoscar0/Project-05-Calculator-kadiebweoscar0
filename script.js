@@ -120,9 +120,16 @@ plusoumoinsButton.addEventListener('click', (event) => {
 
 //button egal
 equalsButton.addEventListener('click', (event) => {
+
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     contentCalcul = eval(displayElement.textContent);
-    displayElement.innerHTML += ` = ${contentCalcul}`;
-    inputElement.value = contentCalcul
+    if (contentCalcul === Infinity) {
+        displayElement.innerHTML += ' = Error';
+        inputElement.value = 'Error'
+    }else{
+        displayElement.innerHTML += ` = ${contentCalcul}`;
+        inputElement.value = contentCalcul
+    }
+    
 })
