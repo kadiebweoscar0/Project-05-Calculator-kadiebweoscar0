@@ -7,33 +7,21 @@ import{ calculate } from './calculator.js';
 
 
 const numpadButtons = document.querySelectorAll('.numpad');
-
 const inputElement = document.getElementById('input');
-
 const displayElement = document.getElementById('calcul');
-
 const acButton = document.getElementById('reset');
-
 const cButton  = document.getElementById('clear');
-
 const percentageButton = document.getElementById('percentage');
-
 const plusButton = document.getElementById('plus');
-
 const minusButton = document.getElementById('minus')
-
 const timesButton = document.getElementById('times')
-
 const dividebyButton = document.getElementById('divideby')
-
 const plusoumoinsButton = document.getElementById('plusoumoins')
-
 const equalsButton = document.getElementById('equals');
-
 let txtContent, contentCalcul = 0;
 
 
-//empecher la saisie au clavier
+//bloquer la saisie au clavier
 inputElement.addEventListener('keypress', (event) => {
     event.preventDefault()
 })
