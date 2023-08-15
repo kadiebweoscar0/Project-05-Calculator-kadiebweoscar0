@@ -4,8 +4,6 @@ import{ calculate } from './calculator.js';
 // TODO: Faire la manipulation du DOM dans ce fichier
 
 //select buttons
-
-
 const numpadButtons = document.querySelectorAll('.numpad');
 const inputElement = document.getElementById('input');
 const displayElement = document.getElementById('calcul');
@@ -56,7 +54,6 @@ cButton.addEventListener('click', (event) => {
   });
 
   
-
 //button addition
 plusButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -110,11 +107,8 @@ plusoumoinsButton.addEventListener('click', (event) => {
     inputElement.value = contentCalcul
 })
 
-
-
 //button egal
 equalsButton.addEventListener('click', (event) => {
-
     event.preventDefault();
     displayElement.innerHTML += inputElement.value;
     contentCalcul = eval(displayElement.textContent);
@@ -124,6 +118,5 @@ equalsButton.addEventListener('click', (event) => {
     }else{
         displayElement.innerHTML += ` = ${contentCalcul}`;
         inputElement.value = contentCalcul
-    }
-    
+    } 
 })
