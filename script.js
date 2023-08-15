@@ -32,6 +32,12 @@ const equalsButton = document.getElementById('equals');
 
 let txtContent, contentCalcul = 0;
 
+
+//empecher la saisie au clavier
+inputElement.addEventListener('keypress', (event) => {
+    event.preventDefault()
+})
+
 //création du fonction displayTouch pour affichée le numero ou digit appuiyer
 function displayTouch() {
     numpadButtons.forEach(button => {
@@ -58,7 +64,7 @@ acButton.addEventListener('click', (event) => {
 cButton.addEventListener('click', (event) => {
     event.preventDefault();
     inputElement.value = inputElement.value.slice(0, -1);
-    displayElement.innerHTML = displayElement.innerHTML.slice(0, -1);
+    // displayElement.innerHTML = displayElement.innerHTML.slice(0, -1);
   });
 
   
