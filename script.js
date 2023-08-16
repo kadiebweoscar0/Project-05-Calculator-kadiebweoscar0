@@ -54,13 +54,18 @@ cButton.addEventListener('click', (event) => {
 //button addition
 plusButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (displayElement.textContent.includes("+") === false) {
+    if (displayElement.textContent.includes("-") === true || 
+        displayElement.textContent.includes("*") === true || 
+        displayElement.textContent.includes("/") === true || 
+        displayElement.textContent.includes("+") === true) {
+
+        displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+';
         inputElement.value = ''
     }
+
     else {
-        displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+';
         inputElement.value = ''
