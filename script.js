@@ -29,9 +29,7 @@ function displayTouch() {
     numpadButtons.forEach(button => {
         button.addEventListener('click', ()=>{
             txtContent = button.textContent;
-            
-        inputElement.value += txtContent;
-        // displayElement.innerHTML += txtContent;
+            inputElement.value += txtContent;
         } )
     });
 }
@@ -50,25 +48,23 @@ acButton.addEventListener('click', (event) => {
 cButton.addEventListener('click', (event) => {
     event.preventDefault();
     inputElement.value = inputElement.value.slice(0, -1);
-    // displayElement.innerHTML = displayElement.innerHTML.slice(0, -1);
   });
 
   
 //button addition
 plusButton.addEventListener('click', (event) => {
     event.preventDefault();
-    // let m = displayElement.textContent.includes("+");
     if (displayElement.textContent.includes("+") === false) {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+';
         inputElement.value = ''
-    } else {
+    }
+    else {
         displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+';
         inputElement.value = ''
     }
-    
 })
 
 //button sustraction
@@ -78,7 +74,8 @@ minusButton.addEventListener('click', (event) => {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '-';
         inputElement.value = ''
-    } else {
+    }
+    else {
         displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '-';
@@ -93,7 +90,8 @@ timesButton.addEventListener('click', (event) => {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '*';
         inputElement.value = ''
-    } else {
+    }
+    else {
         displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '*';
@@ -115,7 +113,8 @@ dividebyButton.addEventListener('click', (event) => {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '/';
         inputElement.value = ''
-    } else {
+    }
+    else {
         displayElement.innerHTML = ''
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '/';
@@ -138,8 +137,9 @@ equalsButton.addEventListener('click', (event) => {
     if (contentCalcul === Infinity) {
         displayElement.innerHTML += ' = Error';
         inputElement.value = 'Error'
-    }else{
+    }
+    else{
         displayElement.innerHTML += ` = ${contentCalcul}`;
         inputElement.value = contentCalcul
     } 
-})
+});
