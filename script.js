@@ -96,16 +96,21 @@ else {
 //button multiplication
 timesButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (displayElement.textContent.includes("*") === false) {
-        displayElement.innerHTML += inputElement.value;
-        displayElement.innerHTML += '*';
-        inputElement.value = ''
+    if (displayElement.textContent.includes("-") === true || 
+    displayElement.textContent.includes("*") === true || 
+    displayElement.textContent.includes("/") === true || 
+    displayElement.textContent.includes("+") === true) {
+
+    displayElement.innerHTML = ''
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '*';
+    inputElement.value = ''
     }
+
     else {
-        displayElement.innerHTML = ''
-        displayElement.innerHTML += inputElement.value;
-        displayElement.innerHTML += '*';
-        inputElement.value = ''
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += '*';
+    inputElement.value = ''
     }
 })
 
