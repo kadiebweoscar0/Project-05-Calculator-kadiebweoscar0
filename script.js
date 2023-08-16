@@ -70,7 +70,7 @@ plusButton.addEventListener('click', (event) => {
         displayElement.innerHTML += '+';
         inputElement.value = ''
     }
-})
+});
 
 //button sustraction
 minusButton.addEventListener('click', (event) => {
@@ -84,14 +84,14 @@ minusButton.addEventListener('click', (event) => {
     displayElement.innerHTML += inputElement.value;
     displayElement.innerHTML += '-';
     inputElement.value = ''
-}
+    }
 
-else {
+    else {
     displayElement.innerHTML += inputElement.value;
     displayElement.innerHTML += '-';
     inputElement.value = ''
-}
-})
+    }
+});
 
 //button multiplication
 timesButton.addEventListener('click', (event) => {
@@ -112,14 +112,7 @@ timesButton.addEventListener('click', (event) => {
     displayElement.innerHTML += '*';
     inputElement.value = ''
     }
-})
-
-//button pourcentage
-percentageButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    let contPourcentage = eval(inputElement.value/100);
-    inputElement.value = contPourcentage;
-})
+});
 
 //button division
 dividebyButton.addEventListener('click', (event) => {
@@ -140,14 +133,21 @@ dividebyButton.addEventListener('click', (event) => {
     displayElement.innerHTML += '/';
     inputElement.value = ''
     }
-})
+});
 
 //button plusoumoins
 plusoumoinsButton.addEventListener('click', (event) => {
     event.preventDefault();
     let contPlusMoins = eval(inputElement.value*-1);
     inputElement.value = contPlusMoins;
-})
+});
+
+//button pourcentage
+percentageButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    let contPourcentage = eval(inputElement.value/100);
+    inputElement.value = contPourcentage;
+});
 
 //button egal
 equalsButton.addEventListener('click', (event) => {
