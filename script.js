@@ -57,9 +57,18 @@ cButton.addEventListener('click', (event) => {
 //button addition
 plusButton.addEventListener('click', (event) => {
     event.preventDefault();
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '+';
-    inputElement.value = ''
+    // let m = displayElement.textContent.includes("+");
+    if (displayElement.textContent.includes("+") === false) {
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '+';
+        inputElement.value = ''
+    } else {
+        displayElement.innerHTML = ''
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '+';
+        inputElement.value = ''
+    }
+    
 })
 
 //button sustraction
