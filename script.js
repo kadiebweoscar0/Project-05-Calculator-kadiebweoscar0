@@ -104,12 +104,8 @@ timesButton.addEventListener('click', (event) => {
 //button pourcentage
 percentageButton.addEventListener('click', (event) => {
     event.preventDefault();
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '/100';
-    contentCalcul = eval(displayElement.textContent);
-    // inputElement.value = ''
-    displayElement.innerHTML += ` = ${contentCalcul}`;
-    inputElement.value = contentCalcul
+    let contPourcentage = eval(inputElement.value/100);
+    inputElement.value = contPourcentage;
 })
 
 //button division
@@ -130,11 +126,8 @@ dividebyButton.addEventListener('click', (event) => {
 //button plusoumoins
 plusoumoinsButton.addEventListener('click', (event) => {
     event.preventDefault();
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '*-1';
-    contentCalcul = eval(displayElement.textContent);
-    displayElement.innerHTML += ` = ${contentCalcul}`;
-    inputElement.value = contentCalcul
+    let contPlusMoins = eval(inputElement.value*-1);
+    inputElement.value = contPlusMoins;
 })
 
 //button egal
