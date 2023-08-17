@@ -58,27 +58,15 @@ plusButton.addEventListener('click', (event) => {
     //ajouter une operation de plus sur ce qui là trouver
     //add one more operation on what to find there
     if (displayElement.textContent.includes("1234567890") && 
-        displayElement.textContent.includes("-") === true || 
         displayElement.textContent.includes("*") === true || 
+        displayElement.textContent.includes("+") === true || 
         displayElement.textContent.includes("/") === true || 
-        displayElement.textContent.includes("+") === true )
+        displayElement.textContent.includes("-") === true )
     {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+'
         inputElement.value = ''
     }
-
-    else if (displayElement.textContent.includes("-") === true || 
-        displayElement.textContent.includes("*") === true || 
-        displayElement.textContent.includes("/") === true || 
-        displayElement.textContent.includes("+") === true) {
-
-        displayElement.innerHTML = ''
-        displayElement.innerHTML += inputElement.value;
-        displayElement.innerHTML += '+';
-        inputElement.value = ''
-    }
-
     else {
         displayElement.innerHTML += inputElement.value;
         displayElement.innerHTML += '+';
@@ -89,64 +77,64 @@ plusButton.addEventListener('click', (event) => {
 //button sustraction
 minusButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (displayElement.textContent.includes("-") === true || 
-    displayElement.textContent.includes("*") === true || 
-    displayElement.textContent.includes("/") === true || 
-    displayElement.textContent.includes("+") === true) {
-
-    displayElement.innerHTML = ''
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '-';
-    inputElement.value = ''
+    if (displayElement.textContent.includes("1234567890") && 
+        displayElement.textContent.includes("*") === true || 
+        displayElement.textContent.includes("+") === true || 
+        displayElement.textContent.includes("/") === true || 
+        displayElement.textContent.includes("-") === true )
+    {
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '-'
+        inputElement.value = ''
     }
-
     else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '-';
-    inputElement.value = ''
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '-';
+        inputElement.value = ''
     }
 });
 
 //button multiplication
 timesButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (displayElement.textContent.includes("-") === true || 
-    displayElement.textContent.includes("*") === true || 
-    displayElement.textContent.includes("/") === true || 
-    displayElement.textContent.includes("+") === true) {
 
-    displayElement.innerHTML = ''
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '*';
-    inputElement.value = ''
+    if (displayElement.textContent.includes("1234567890") && 
+        displayElement.textContent.includes("*") === true || 
+        displayElement.textContent.includes("+") === true || 
+        displayElement.textContent.includes("/") === true || 
+        displayElement.textContent.includes("-") === true )
+    {
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '*'
+        inputElement.value = ''
     }
-
     else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '*';
-    inputElement.value = ''
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '*';
+        inputElement.value = ''
     }
 });
 
 //button division
 dividebyButton.addEventListener('click', (event) => {
     event.preventDefault();
-    if (displayElement.textContent.includes("-") === true || 
-    displayElement.textContent.includes("*") === true || 
-    displayElement.textContent.includes("/") === true || 
-    displayElement.textContent.includes("+") === true) {
-
-    displayElement.innerHTML = ''
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '/';
-    inputElement.value = ''
+   
+    if (displayElement.textContent.includes("1234567890") && 
+        displayElement.textContent.includes("*") === true || 
+        displayElement.textContent.includes("+") === true || 
+        displayElement.textContent.includes("/") === true || 
+        displayElement.textContent.includes("-") === true )
+    {
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '/'
+        inputElement.value = ''
     }
-
     else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '/';
-    inputElement.value = ''
+        displayElement.innerHTML += inputElement.value;
+        displayElement.innerHTML += '/';
+        inputElement.value = ''
     }
+    
 });
 
 //button plusoumoins
