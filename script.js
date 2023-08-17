@@ -22,14 +22,17 @@ let txtContent, contentCalcul = 0;
 //bloquer la saisie au clavier
 inputElement.addEventListener('keypress', (event) => {
     event.preventDefault()
-
 })
 
 //création du fonction displayTouch pour affichée le numero ou digit appuiyer
 function displayTouch() {
     numpadButtons.forEach(button => {
         button.addEventListener('click', ()=>{
-            
+                // Si le bouton cliqué est un point et que l'inputElement en contient déjà un, ne rien faire.
+            if (button.textContent === '.' && inputElement.value.includes('.')) {
+                return;
+            }
+
             if (inputElement.value.length >= 10) {
                 inputElement.value = inputElement.value.slice(0, -1);
                 
