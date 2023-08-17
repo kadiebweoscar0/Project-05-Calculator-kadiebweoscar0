@@ -28,7 +28,11 @@ inputElement.addEventListener('keypress', (event) => {
 function displayTouch() {
     numpadButtons.forEach(button => {
         button.addEventListener('click', ()=>{
-            txtContent = button.textContent;
+            
+            if (inputElement.value.length >= 10) {
+                inputElement.value = inputElement.value.slice(0, -1);
+                
+            }txtContent = button.textContent;
             inputElement.value += txtContent;
         } )
     });
