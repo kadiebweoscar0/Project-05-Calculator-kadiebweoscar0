@@ -22,6 +22,7 @@ let txtContent, contentCalcul = 0;
 //bloquer la saisie au clavier
 inputElement.addEventListener('keypress', (event) => {
     event.preventDefault()
+
 })
 
 //création du fonction displayTouch pour affichée le numero ou digit appuiyer
