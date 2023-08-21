@@ -64,79 +64,26 @@ plusButton.addEventListener('click', (event) => {
 
   //ajouter une operation de plus sur ce qui là trouver
   //add one more operation on what to find there
-  if (displayElement.textContent.includes("1234567890") &&
-    displayElement.textContent.includes("*") === true ||
-    displayElement.textContent.includes("+") === true ||
-    displayElement.textContent.includes("/") === true ||
-    displayElement.textContent.includes("-") === true) {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '+'
-    inputElement.value = ''
-  }
-  else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '+';
-    inputElement.value = ''
-  }
+  handlerButton('+')
 });
 
 //button sustraction
 minusButton.addEventListener('click', (event) => {
   event.preventDefault();
-  if (displayElement.textContent.includes("1234567890") &&
-    displayElement.textContent.includes("*") === true ||
-    displayElement.textContent.includes("+") === true ||
-    displayElement.textContent.includes("/") === true ||
-    displayElement.textContent.includes("-") === true) {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '-'
-    inputElement.value = ''
-  }
-  else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '-';
-    inputElement.value = ''
-  }
+  handlerButton('-')
 });
 
 //button multiplication
 timesButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  if (displayElement.textContent.includes("1234567890") &&
-    displayElement.textContent.includes("*") === true ||
-    displayElement.textContent.includes("+") === true ||
-    displayElement.textContent.includes("/") === true ||
-    displayElement.textContent.includes("-") === true) {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '*'
-    inputElement.value = ''
-  }
-  else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '*';
-    inputElement.value = ''
-  }
+  handlerButton('*')
 });
 
 //button division
 dividebyButton.addEventListener('click', (event) => {
   event.preventDefault();
-
-  if (displayElement.textContent.includes("1234567890") &&
-    displayElement.textContent.includes("*") === true ||
-    displayElement.textContent.includes("+") === true ||
-    displayElement.textContent.includes("/") === true ||
-    displayElement.textContent.includes("-") === true) {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '/'
-    inputElement.value = ''
-  }
-  else {
-    displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += '/';
-    inputElement.value = ''
-  }
+  handlerButton('/')
 
 });
 
@@ -168,3 +115,20 @@ equalsButton.addEventListener('click', (event) => {
     inputElement.value = contentCalcul;
   }
 });
+
+function handlerButton(signe) {
+  if (displayElement.textContent.includes("1234567890") &&
+    displayElement.textContent.includes("*") === true ||
+    displayElement.textContent.includes("+") === true ||
+    displayElement.textContent.includes("/") === true ||
+    displayElement.textContent.includes("-") === true) {
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += signe;
+    inputElement.value = ''
+  }
+  else {
+    displayElement.innerHTML += inputElement.value;
+    displayElement.innerHTML += signe;
+    inputElement.value = ''
+  }
+}
