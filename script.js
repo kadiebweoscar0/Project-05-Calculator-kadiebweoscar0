@@ -15,7 +15,7 @@ const timesButton = document.getElementById('times')
 const dividebyButton = document.getElementById('divideby')
 const plusoumoinsButton = document.getElementById('plusoumoins')
 const equalsButton = document.getElementById('equals');
-let txtContent, contentCalcul = 0;
+let txtContent, contentCalcul = 0, contentElement;
 
 
 //bloquer la saisie au clavier
@@ -27,6 +27,10 @@ inputElement.addEventListener('keypress', (event) => {
 function displayTouch() {
     numpadButtons.forEach(button => {
         button.addEventListener('click', ()=>{
+
+          if(inputElement.value === 0){
+            inputElement.value = button.textContent;
+          }
                 // Si le bouton cliqué est un point et que l'inputElement en contient déjà un, ne rien faire.
             if (button.textContent === '.' && inputElement.value.includes('.')) {
                 return;
@@ -35,7 +39,9 @@ function displayTouch() {
             if (inputElement.value.length >= 10) {
                 inputElement.value = inputElement.value.slice(0, -1);
                 
-            }txtContent = button.textContent;
+            }contentElement = button.textContent;
+          console.log()
+            txtContent = button.textContent;
             inputElement.value += txtContent;
         } )
     });
@@ -48,6 +54,7 @@ acButton.addEventListener('click', (event) => {
   event.preventDefault();
   inputElement.value = '';
   displayElement.innerHTML = '';
+  contentElement = ''
 });
 
 //button C pour effacer le dernier élment contenu dans inputElement et displayElement
@@ -89,8 +96,13 @@ dividebyButton.addEventListener('click', (event) => {
 //button plusoumoins
 plusoumoinsButton.addEventListener('click', (event) => {
   event.preventDefault();
-  let contPlusMoins = eval(inputElement.value * -1);
-  inputElement.value = contPlusMoins;
+  if(inputElement.value === ""){
+    return;
+  }
+  else{
+    let contPlusMoins = eval(inputElement.value * -1);
+    inputElement.value = contPlusMoins;
+  }
 });
 
 //button pourcentage
@@ -106,8 +118,8 @@ equalsButton.addEventListener('click', (event) => {
   displayElement.innerHTML += inputElement.value;
   contentCalcul = eval(displayElement.textContent);
   if (contentCalcul === Infinity) {
-    displayElement.innerHTML += ' = Error';
-    inputElement.value = 'Error'
+    displayElement.innerHTML += ' = Erreur';
+    inputElement.value = 'Erreur'
   }
   else {
     displayElement.innerHTML += ` = ${contentCalcul}`;
@@ -116,18 +128,20 @@ equalsButton.addEventListener('click', (event) => {
 });
 
 function handlerButton(signe) {
+  
   if (displayElement.textContent.includes("1234567890") &&
     displayElement.textContent.includes("*") === true ||
     displayElement.textContent.includes("+") === true ||
     displayElement.textContent.includes("/") === true ||
     displayElement.textContent.includes("-") === true) {
+    displayElement.textContent= "";
     displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += signe;
+    displayElement.innerHTML += ` ${signe} `;
     inputElement.value = ''
-  }
+  }   
   else {
     displayElement.innerHTML += inputElement.value;
-    displayElement.innerHTML += signe;
+    displayElement.innerHTML += ` ${signe} `;
     inputElement.value = ''
   }
 }
