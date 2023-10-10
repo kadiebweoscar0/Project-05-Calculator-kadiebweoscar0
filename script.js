@@ -70,26 +70,26 @@ plusButton.addEventListener('click', (event) => {
 
   //ajouter une operation de plus sur ce qui là trouver
   //add one more operation on what to find there
-  handlerButton('+')
+  operationCalcul('+')
 });
 
 //button sustraction
 minusButton.addEventListener('click', (event) => {
   event.preventDefault();
-  handlerButton('-')
+  operationCalcul('-')
 });
 
 //button multiplication
 timesButton.addEventListener('click', (event) => {
   event.preventDefault();
 
-  handlerButton('*')
+  operationCalcul('*')
 });
 
 //button division
 dividebyButton.addEventListener('click', (event) => {
   event.preventDefault();
-  handlerButton('/')
+  operationCalcul('/')
 
 });
 
@@ -127,7 +127,7 @@ equalsButton.addEventListener('click', (event) => {
   }
 });
 
-function handlerButton(signe) {
+function operationCalcul(signe) {
   
   if (displayElement.textContent.includes("1234567890") &&
     displayElement.textContent.includes("*") === true ||
